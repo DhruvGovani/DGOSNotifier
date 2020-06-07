@@ -4,7 +4,9 @@ A lightweight extension library which allows you to show on screen notification 
 
 ### Preview
 
+#### with Navigation bar and Tab bar
 ![](with_bar.gif)
+#### without Navigation bar and Tab bar
 ![](without_bar.gif)
 
 ## Features
