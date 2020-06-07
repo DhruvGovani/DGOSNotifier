@@ -4,8 +4,8 @@ A lightweight extension library which allows you to show on screen notification 
 
 ### Preview
 
-![](with bar.gif)
-![](without bar.gif)
+![](with_bar.gif)
+![](without_bar.gif)
 
 ## Features
 
