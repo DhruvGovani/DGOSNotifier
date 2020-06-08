@@ -18,7 +18,7 @@ extension UIView{
     /**
      ParantView will be : self.view, this function will initialize the view.
      */
-    func initOSNotifier(ParantView : UIView, Text : String, Icon : UIImage, BackgroundColor : UIColor, AppearFrom : direction, TextColor : UIColor){
+    func initOSNotifier(ParantView : UIView, BackgroundColor : UIColor, AppearFrom : direction, TextColor : UIColor){
         
         switch AppearFrom {
         case .bottom:
@@ -34,7 +34,7 @@ extension UIView{
         
         let icon = UIImageView()
         icon.frame = CGRect(x: 12, y: 10, width: 30, height: 30)
-        icon.image = Icon
+        icon.image = UIImage()
         icon.contentMode = .scaleAspectFit
         self.addSubview(icon)
         
@@ -46,7 +46,7 @@ extension UIView{
         title.numberOfLines = 0
         title.textColor = TextColor
         title.lineBreakMode = .byClipping
-        title.text = Text
+        title.text = "default"
         title.textAlignment = .left
         title.adjustsFontSizeToFitWidth = true
         title.minimumScaleFactor = 0.25
@@ -59,10 +59,22 @@ extension UIView{
     /**
     ParantView will be : self.view, this function will show and hide the notifier with animations
     */
-    func showOSNotifier(to : direction,ParantView : UIView){
+    func showOSNotifier(to : direction,ParantView : UIView, Title : String, Image: UIImage){
         
          var startPos : CGFloat = 0
         
+        for subview in self.subviews{
+            if subview.tag == 0
+            {
+                if let label = subview as? UILabel {
+                    label.text = Title
+                }
+                
+                if let icon = subview as? UIImageView{
+                    icon.image = Image
+                }
+            }
+        }
         
         switch to {
         case .top:

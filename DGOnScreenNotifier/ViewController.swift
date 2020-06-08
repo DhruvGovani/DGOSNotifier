@@ -21,20 +21,22 @@ class ViewController: UIViewController {
         TopOSNotifierView.frame = .zero
         self.view.addSubview(TopOSNotifierView)
         
-        TopOSNotifierView.initOSNotifier(ParantView: self.view, Text: "Features : Auto Font Size, Multiline, Icon, Eyes boggling animation", Icon: #imageLiteral(resourceName: "ok"), BackgroundColor: .black, AppearFrom: .top, TextColor: .white)
+        TopOSNotifierView.initOSNotifier(ParantView: self.view, BackgroundColor: .black, AppearFrom: .top, TextColor: .white)
         
+        //Features : Auto Font Size, Multiline, Icon, Eyes boggling animation
         
         BottomOSNotifierView.frame = .zero
         self.view.addSubview(BottomOSNotifierView)
 
-        BottomOSNotifierView.initOSNotifier(ParantView: self.view, Text: "Hello World!", Icon: #imageLiteral(resourceName: "info"), BackgroundColor: .black, AppearFrom: .bottom, TextColor: .white)
+        BottomOSNotifierView.initOSNotifier(ParantView: self.view, BackgroundColor: .black, AppearFrom: .bottom, TextColor: .white)
         // Do any additional setup after loading the view.
     }
     
     @IBAction func Action(_ sender: Any) {
        
-        TopOSNotifierView.showOSNotifier(to: .top, ParantView: self.view)
-        BottomOSNotifierView.showOSNotifier(to: .bottom, ParantView: self.view)
+        TopOSNotifierView.showOSNotifier(to: .top, ParantView: self.view, Title: "Features : Auto Font Size, Multiline, Icon, Eyes boggling animation", Image: #imageLiteral(resourceName: "ok"))
+        
+        BottomOSNotifierView.showOSNotifier(to: .bottom, ParantView: self.view, Title: "DGOSNotifier", Image: #imageLiteral(resourceName: "info"))
     }
     
     @IBAction func button(_ sender: Any) {
