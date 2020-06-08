@@ -44,20 +44,18 @@ Declare Before viewDidLoad()
     
    Inside the viewDidLoad()
 
-    NotificationView.frame = .zero
-
     self.view.addSubview(NotificationView)
 
    
 ### Quick Example
 Now use initOSNotifier method of UIView to initialize the notifier
 
-    NotificationView.initOSNotifier(ParantView: self.view, Text: "Label text here", Icon: #imageLiteral(resourceName: "imageName"), BackgroundColor: .black, AppearFrom: .top, TextColor: .white)
+    NotificationView.initOSNotifier(ParantView: self.view, BackgroundColor: .black, AppearFrom: .bottom, TextColor: .white)
 
 
 Now use showOSNotifier() to show the notification
 
-    NotificationView.showOSNotifier(to: .top, ParantView: self.view)
+    NotificationView.showOSNotifier(to: .bottom, ParantView: self.view, Title: "DGOSNotifier", Image: #imageLiteral(resourceName: "info"))
 
 make sure direction parameter must remain same either **.top** or **.bottom**
 
